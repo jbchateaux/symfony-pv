@@ -1,0 +1,37 @@
+.Section {
+	padding: 100px 0;
+}
+
+.Section_Dark {
+	background-color: #000;
+	padding: 0;
+
+	.Wrapper {
+		position: relative;
+		top: 125px;
+	}
+
+	.Section_Title {
+		color: #fff;
+	}
+}
+
+.Section_Light {
+	background-color: #fff;
+	padding-top: 200px;
+	padding-bottom: 800px;
+
+	.Section_Title {
+		color: #000;
+	}
+}
+
+.Section_Title {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 800;
+	font-size: 40px;
+	text-transform: lowercase;
+	text-align: center;
+	letter-spacing: -1px;
+	margin-bottom: 50px;
+}

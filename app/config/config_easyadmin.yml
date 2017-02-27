@@ -1,0 +1,46 @@
+easy_admin:
+    site_name: Back-Office
+    design:
+        brand_color: '#94c301'
+        form_theme: 'vertical'
+        menu:
+            - { label: 'Hobbies', icon: 'trophy', children: [ { entity: 'Hobby', icon: 'flag' }] }
+    formats:
+        datetime:   'd/m/Y h:i A e'
+        date:       'd/m/Y'
+        time:       'h:i A e'
+    entities:
+        Hobby:
+            class: AppBundle\Entity\Hobby
+            label: 'Hobby'
+            sort: ['position', 'asc']
+            list:
+                title: 'Hobby'
+                actions:
+                    - { name: 'new', label: 'Ajouter', icon: 'add' }
+                    - { name: 'show', label: 'Afficher', icon: 'search' }
+                    - { name: 'edit', label: 'Modifier', icon: 'edit' }
+                    - { name: 'delete', label: 'Supprimer', icon: 'delete' }
+                fields:
+                    - { property: 'title', label: 'Titre' }
+                    - { property: 'position', label: 'Position' }
+                    - { property: 'ico', label: 'Icone', type: 'image', base_path: "%hobby_ico_path%" }
+            show:
+                title: 'Fiche d''un hobby'
+                fields:
+                    - { property: 'title', label: 'Titre' }
+                    - { property: 'position', label: 'Position' }
+                    - { property: 'ico', label: 'Icone', type: 'image', base_path: "%hobby_ico_path%" }
+                    - { property: 'hobbyPhoto', label: 'Photos' }
+                    - { property: 'createdAt', label: 'Date de création', type: 'date' }
+                    - { property: 'updatedAt', label: 'Date de modification', type: 'date' }
+            new:
+                title: 'Ajouter un hobby'
+            edit:
+                title: 'Modifier un hobby'
+                fields:
+                    - { property: 'position', label: 'Position' }
+            form:
+                fields:
+                    - { property: 'title', label: 'Titre' }
+                    - { property: 'icoFile', label: 'Icone', type: 'vich_image' }

@@ -1,0 +1,104 @@
+.Projects {
+	font-size: 0;
+}
+
+.Project {
+	position: relative;
+	display: inline-block;
+	width: 49%;
+	margin: 2% 0 0 2%;
+	cursor: pointer;
+	overflow: hidden;
+	transform-origin: top;
+
+	&:first-child {
+		display: block;
+		width: 100%;
+		margin: 0;
+	}
+
+	&:nth-child(2n) {
+		margin-left: 0;
+	}
+
+	&:hover {
+		.Project_Img {
+		}
+
+		&:first-child {
+		}
+
+		.Project_Color {
+			opacity: 0.5;
+			height: 275px;
+			width: 275px;
+		}
+
+		.Project_Logo {
+			transition-delay: .15s;
+			opacity: 1;
+			transform: translateX(-50%) translateY(-50%) scale(1);
+		}
+	}
+}
+
+.Project-hidden {
+	opacity: 0;
+	animation: none;
+}
+
+.Project-animate {
+	animation: fadeUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.Project_ImgContainer {
+	height: 100%;
+}
+
+.Project_Color {
+	height: 325px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 325px;
+	opacity: 0;
+	transform: translateX(-50%) translateY(-50%);
+	border: 500px solid rgba(0,0,0,0.8);
+	border-radius: 50%;
+	box-sizing: content-box;
+	transition: all .15s ease-out;
+}
+
+.Project_Logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%) scale(1.9);
+	width: 125px;
+	height: 75px;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition: all .2s ease-out;
+}
+
+.Project_Img {
+	filter: grayscale(100%);
+	@include background-cover();
+	width: 100%;
+	height: 100%;
+	transition: filter .15s ease-out;
+}
+
+@media only screen and (min-width : map-get($breakpoints, "tablet")) {
+	.Project {
+		height: 350px;
+	}
+}
+
+@media only screen and (min-width : map-get($breakpoints, "desktop")) {
+	.Project {
+		height: 400px;
+	}
+}

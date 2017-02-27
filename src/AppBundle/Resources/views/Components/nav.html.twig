@@ -1,0 +1,22 @@
+<nav class="Nav js-nav">
+    <div class="Nav_Links">
+        <div class="Nav_Side">Navigation.</div>
+        <div class="Nav_Link"><a class="Nav_Link-1" href="{{ path('homepage') }}" title="à propos">accueil</a></div>
+        <div class="Nav_Link"><a class="Nav_Link-2" href="{{ path('projects') }}" title="les projets">projets</a></div>
+        <div class="Nav_Link"><a class="Nav_Link-3" href="{{ path('about') }}" title="à propos">à propos</a></div>
+        <div class="Nav_Link"><a class="Nav_Link-4" href="{{ path('contact') }}" title="contact">contact</a></div>
+    </div>
+    <div class="Nav_Contacts">
+        <div class="Nav_Side">
+            {{ render(controller('AppBundle:App:social')) }}
+        </div>
+        <div class="Nav_Contact">
+            <div class="Nav_ContactTitle">Email</div>
+            <a class="Nav_ContactValue" href="mailto:jb.chateaux@gmail.com">jb.chateaux@gmail.com</a>
+        </div>
+        <div class="Nav_Contact">
+            <div class="Nav_ContactTitle">Poste actuel</div>
+            <span class="Nav_ContactValue">Lead & full-stack developper chez <a href="http://www.wandi.fr" title="Wandi" target="_blank">Wandi</a> </span>
+        </div>
+    </div>
+</nav>

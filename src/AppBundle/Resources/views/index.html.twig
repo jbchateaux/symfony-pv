@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="Main">
+        <section class="HomeIntro js-intro">
+            <div class="HomeIntro_Container js-intro-container">
+                <div class="HomeIntro_Img js-intro-img"></div>
+                <div class="HomeIntro_Shadow js-intro-shadow"></div>
+                <div class="HomeIntro_LogoMask js-intro-mask"></div>
+                <h1 class="HomeIntro_Title CenterXY">Full-Stack developper<span class="HomeIntro_Titlebelow">chez <span>—</span> Wandi</h1>
+            </div>
+        </section>
+        <section class="Section Section_Dark">
+            <div class="Wrapper">
+                <div class="Section_Title">
+                    <h2>Projets.</h2>
+                </div>
+                <div class="Projects js-projects">
+                    {% for project in projects %}
+                        <div class="Project Project-hidden">
+                            <div class="Project_ImgContainer">
+                                <div class="Project_Img" style="background-image: url({{ vich_uploader_asset(project, 'imgPreviewFile') }})"></div>
+                                <div class="Project_Color" style="background-color: {{ project.color }}"></div>
+                                <div class="Project_Logo" style="background-image: url({{ vich_uploader_asset(project, 'imgLogoFile') }})"></div>
+                            </div>
+                            <div class="Project_Title">{{ project.title }}</div>
+                            <div class="Project_Excerpt">{{ project.content|striptags|slice(0, 100) }}</div>
+                            <a href="{{ path('project', {'slug': project.slug}) }}" title="{{ project.title }}">+</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section class="Section Section_Light">
+            <div class="Section_Title">
+                <h2>A Propos.</h2>
+            </div>
+
+        </section>
+    </main>
+{% endblock %}

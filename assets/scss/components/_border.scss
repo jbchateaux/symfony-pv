@@ -1,0 +1,33 @@
+.BorderFixed {
+	position: fixed;
+	z-index: 100;
+	background-color: get-color("main");
+}
+
+.BorderFixed-left {
+	height: 100%;
+	width: 12px;
+	left: 0;
+	top: 0;
+}
+
+.BorderFixed-top {
+	height: 12px;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.BorderFixed-right {
+	height: 100%;
+	width: 12px;
+	right: 0;
+	top: 0;
+}
+
+.BorderFixed-bottom {
+	height: 12px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}

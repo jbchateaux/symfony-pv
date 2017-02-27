@@ -1,0 +1,33 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        in_memory:
+            memory:
+                users:
+                    admin:  { password: "%user_pwd%", roles: 'ROLE_ADMIN' }
+
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: sha512
+            encode_as_base64: true
+            iterations: 1
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        secured_area:
+            pattern:    ^/
+            anonymous: ~
+            http_basic:
+                realm: "Back-Office"
+
+        main:
+            anonymous: ~
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }

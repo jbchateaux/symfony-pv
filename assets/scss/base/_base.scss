@@ -1,0 +1,133 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+button {
+    border: 0;
+    background: none;
+    padding: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+
+    &::before {
+        opacity: 0;
+        content: '';
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        top: 0;
+        left: 0;
+        transition: opacity .35s ease-out;
+    }
+
+    &.Nav-open {
+        &::before {
+            z-index: 3;
+            opacity: 1;
+        }
+    }
+}
+
+.CenterXY {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+.Wrapper {
+    margin: 0 auto;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity:0;
+        -webkit-transform:translate(0,70px);
+        -ms-transform:translate(0,70px);
+        transform:translate(0,70px);
+    }
+
+    100% {
+        opacity:1;
+        -webkit-transform:translate(0,0);
+        -ms-transform:translate(0,0);
+        transform:translate(0,0);
+    }
+}
+
+@media only screen and (min-width : map-get($breakpoints, "tablet")) {
+    .Wrapper {
+        width: 750px;
+    }
+}
+
+@media only screen and (min-width : map-get($breakpoints, "desktop")) {
+    .Wrapper {
+        width: 1170px;
+    }
+}

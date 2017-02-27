@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Accueil{% endblock %} | Jean-baptiste Châteaux</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/global.css') }}" media="screen" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="BorderFixed BorderFixed-left"></div>
+        <div class="BorderFixed BorderFixed-top"></div>
+        <div class="BorderFixed BorderFixed-right"></div>
+        <div class="BorderFixed BorderFixed-bottom"></div>
+        {% block header %}
+            {% include '@App/Layouts/header.html.twig' %}
+            {% include '@App/Components/nav.html.twig' %}
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block footer %}{% include '@App/Layouts/footer.html.twig' %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('js/global.js') }}"></script>
+
+            {% if app.environment == 'prod' %}
+            <script>
+                {# Google Analytics #}
+            </script>
+            {% endif %}
+        {% endblock %}
+    </body>
+</html>

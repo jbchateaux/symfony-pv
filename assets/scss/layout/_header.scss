@@ -1,0 +1,132 @@
+.Header {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    padding: 0 50px;
+    width: 100%;
+    z-index: 10;
+
+    &.Header-dark {
+        .Header_Menu {
+            color: #000;
+        }
+
+        .Header_MenuIcoLine {
+            background-color: #000;
+        }
+
+        .Header_Logo {
+            background: url(#{$images-path}/logo-dark.png) center center/contain no-repeat transparent;
+            width: 150px;
+            height: 40px;
+        }
+    }
+}
+
+.Nav-open {
+    .Header_Menu {
+        &:hover {
+            .Header_MenuIcoLine {
+                &:first-child {
+                    transform: rotate(45deg);
+                    top: 0;
+                }
+
+                &:last-child {
+                    transform: rotate(-45deg);
+                    top: 0;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .Header_MenuIcoLine {
+            &:first-child {
+                transform: rotate(-45deg);
+                top: 6.5px;
+            }
+
+            &:last-child {
+                transform: rotate(45deg);
+                top: -5px;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.Header_Menu {
+    color: #fff;
+    font-size: 0;
+    cursor: pointer;
+    font-weight: bold;
+    position: fixed;
+    width: 75px;
+    z-index: 200;
+    top: 35px;
+    right: 40px;
+
+    > span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &:hover {
+
+        .Header_MenuIcoLine {
+            &:first-child {
+                transform: rotate(-45deg);
+            }
+
+            &:last-child {
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.Header_MenuLabel {
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+.Header_MenuIco {
+    width: 17px;
+    height: 14px;
+}
+
+.Header_MenuIcoLine {
+    position: relative;
+    display: block;
+    width: 17px;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 4px;
+    transition: opacity .15s ease-in, transform .15s ease-in, top .15s ease-in;
+    opacity: 1;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.Header_Logo {
+    display: block;
+    background: url(#{$images-path}/logo.png) center center/contain no-repeat transparent;
+    width: 150px;
+    height: 40px;
+    position: fixed;
+    z-index: 200;
+    top: 35px;
+    left: 40px;
+}
